@@ -1,5 +1,5 @@
 import { StackScreenProps } from '@react-navigation/stack'
-import { Button, Center, Flex, Input, Text, VStack } from 'native-base'
+import { Button, Center, Flex, Input, Text, VStack, ScrollView, Image } from 'native-base';
 import  {signIn}  from 'aws-amplify/auth';
 import { useForm, Controller } from 'react-hook-form';
 import React, { useState } from 'react'
@@ -14,7 +14,7 @@ const LoginScreen = ( {navigation}:Props ) => {
 
   const onSubmit = async (data: any) => {
     if (loading) {
-      return;
+       return;
     }
 
     setLoading(true);
@@ -31,15 +31,16 @@ const LoginScreen = ( {navigation}:Props ) => {
   };
 
   return (
-    <Flex safeArea flex={1} justifyContent={'center'} padding={2}>
-      <VStack space={20}>
+    <Flex safeArea flex={1} justifyContent={'center'} padding={'20px'}>
+      <ScrollView>
+      <VStack height={'80vh'} margin={2} borderStyle={'solid'} borderRadius={'10px'} space={10} shadow={'1'} paddingX={'37px'} paddingY={'108px'}>
         <VStack>
           <Center>
-            <Text>
-              Login 
-            </Text>
+          <Image shadow={2} source={{
+            uri: 'https://w7.pngwing.com/pngs/754/2/png-transparent-samsung-galaxy-a8-a8-user-login-telephone-avatar-pawn-blue-angle-sphere.png'
+          }} alt="Alternate Text" size="xl" />
           </Center>
-        </VStack>
+          </VStack>
         <VStack space={2}>
         <Controller
             control={control}
@@ -56,7 +57,7 @@ const LoginScreen = ( {navigation}:Props ) => {
             rules={{ required: true }}
             defaultValue=""
           />
-          {errors.username && <Text>error en el username</Text>}
+          {errors.username && <Text color={'red.500'}>error en el username</Text>}
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -73,26 +74,27 @@ const LoginScreen = ( {navigation}:Props ) => {
             rules={{ required: true }}
             defaultValue=""
           />
-          {errors.password && <Text>error en la contraseña</Text>}
+          {errors.password && <Text color={'red.500'}>error en la contraseña</Text>}
         </VStack>
-        <VStack flex={1} space={2}>
+        <VStack space={2}>
           <Center>            
             <Text>
                 Aun no tienes cuenta.
             </Text>
           </Center>
           <Center>
-            <Text onPress={() => navigation.navigate('Register1')} fontWeight={'bold'}>
+            <Text bold color={'#FBAC00'} onPress={() => navigation.navigate('Register1')} fontWeight={'bold'}>
                 Registrate
             </Text>
           </Center>
         </VStack>
         <VStack>
-          <Button onPress={handleSubmit(onSubmit)}>{loading ? 'Cargando...' : 'Iniciar sesion'}</Button>
+          <Button bgColor={'#8100C7'} _text={{ color: 'white'}} fontWeight={'bold'} onPress={handleSubmit(onSubmit)}>{loading ? 'Cargando...' : 'Iniciar sesion'}</Button>
         </VStack>
       </VStack>
+      </ScrollView>
     </Flex>
   )
 }
 
-export default LoginScreen
+export default LoginScreen;

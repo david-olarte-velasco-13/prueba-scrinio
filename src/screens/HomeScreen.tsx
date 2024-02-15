@@ -18,7 +18,7 @@ const HomeScreen = ( {navigation}:Props ) => {
       }
 
   return (
-    <Flex safeArea flex={1} padding={2} justifyContent={'space-between'}>
+    <Flex safeArea flex={1} padding={'20px'} justifyContent={'space-between'}>
         <VStack>  
             <Center>
                 <Text>
@@ -26,7 +26,7 @@ const HomeScreen = ( {navigation}:Props ) => {
                 </Text>
             </Center>
         </VStack>
-        <Button onPress={handleSignOut}>
+        <Button bgColor={'#8100C7'} _text={{ color: 'white'}} fontWeight={'bold'} onPress={handleSignOut}>
             Cerrar sesion
         </Button>
     </Flex>

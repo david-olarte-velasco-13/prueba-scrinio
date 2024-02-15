@@ -6,22 +6,22 @@ interface Props extends StackScreenProps<any,any>{};
 
 const ProfileIsDoneScreen = ( {navigation}:Props ) => {
   return (
-    <Flex safeArea flex={1} padding={2} justifyContent={'center'}>
-        <VStack margin={2} borderStyle={'solid'} borderRadius={'md'} space={20} shadow={'1'} padding={2}>
+    <Flex safeArea flex={1} padding={'20px'} justifyContent={'center'}>
+        <VStack height={'80vh'} margin={2} borderStyle={'solid'} borderRadius={'10px'} space={180} shadow={'1'} paddingX={'37px'} paddingY={'108px'}>
             <VStack>
-                <Text onPress={() => navigation.navigate('Welcome')}>
+                <Text bold color={'#FBAC00'} onPress={() => navigation.navigate('Welcome')}>
                     Volver a empezar
                 </Text>
             </VStack>
             <VStack>
                 <Center>
-                    <Text fontWeight={'bold'}>
-                        Tu perfil ya esta hecho!
+                    <Text fontWeight={'bold'} color={'#2D0046'}>
+                        !TU PERFIL YA ESTA HECHO¡
                     </Text>
                 </Center>                    
             </VStack>
             <VStack>
-                <Button onPress={() => navigation.navigate('Home')}>
+                <Button  bgColor={'#8100C7'} _text={{ color: 'white'}} fontWeight={'bold'} onPress={() => navigation.navigate('Home')}>
                     Finalizar
                 </Button>
             </VStack>
