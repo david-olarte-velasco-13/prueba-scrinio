@@ -12,7 +12,7 @@ const WelcomeScreen = ( {navigation}:Props ) => {
           <Text>WECUP</Text>
         </Center>
       </VStack>
-      <VStack >
+      <VStack space={2}>
         <Button onPress={() => navigation.navigate('Login')}>Iniciar Sesion</Button>
         <Button onPress={() => navigation.navigate('Register1')}>Registrarse</Button>
       </VStack>

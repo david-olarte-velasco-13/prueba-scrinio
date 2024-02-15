@@ -5,12 +5,7 @@ import StackNavigator from './src/navigation/StackNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import {Amplify} from 'aws-amplify';
 import config from './src/aws-exports';
-import {
-  Authenticator,
-  withAuthenticator,
-  useAuthenticator,
-  useTheme,
-} from '@aws-amplify/ui-react-native';
+
 
 Amplify.configure(config);
 
@@ -24,7 +19,7 @@ const App = () => {
   );
 }
 
-export default withAuthenticator(App);
+export default App;
 
 const styles = StyleSheet.create({
   container: {
