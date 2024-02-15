@@ -20,14 +20,13 @@ const LoginScreen = ( {navigation}:Props ) => {
     setLoading(true);
 
     try {
-      const reponse = await signIn(data);
-      console.log(reponse)
+      await signIn(data);
+      navigation.navigate('IsDone');
     } catch (e: any) {
       Alert.alert('Oops', e.message)
     }
 
     setLoading(false);
-    navigation.navigate('IsDone');
   };
 
   return (
