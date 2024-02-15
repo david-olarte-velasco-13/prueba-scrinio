@@ -1,0 +1,23 @@
+import { Button, Center, Flex, Text, VStack } from 'native-base'
+import { StackScreenProps } from '@react-navigation/stack';
+import React from 'react'
+
+interface Props extends StackScreenProps<any,any>{};
+
+const WelcomeScreen = ( {navigation}:Props ) => {
+  return (
+    <Flex safeArea flex={1} justifyContent={'space-evenly'} padding={2}>
+      <VStack>
+        <Center>
+          <Text>WECUP</Text>
+        </Center>
+      </VStack>
+      <VStack >
+        <Button onPress={() => navigation.navigate('Login')}>Iniciar Sesion</Button>
+        <Button onPress={() => navigation.navigate('Register1')}>Registrarse</Button>
+      </VStack>
+    </Flex>
+  )
+}
+
+export default WelcomeScreen

@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-wecupauth-staging-31252-authRole",
+      "UnauthRoleArn": "arn:aws:iam::992382506390:role/amplify-wecupauth-staging-31252-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::992382506390:role/amplify-wecupauth-staging-31252-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-wecupauth-staging-31252-deployment",
+      "UnauthRoleName": "amplify-wecupauth-staging-31252-unauthRole",
+      "StackName": "amplify-wecupauth-staging-31252",
+      "StackId": "arn:aws:cloudformation:us-east-1:992382506390:stack/amplify-wecupauth-staging-31252/f0d0d210-cae6-11ee-9ddb-1261af05c965",
+      "AmplifyAppId": "d3aetyu8vxlqut"
+    },
+    "categories": {
+      "auth": {
+        "wecupAuth": {}
+      }
+    }
+  }
+}
