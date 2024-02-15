@@ -1,18 +1,33 @@
 import { StackScreenProps } from '@react-navigation/stack'
 import { Button, Center, Flex, Input, Text, VStack } from 'native-base'
+import  {signIn}  from 'aws-amplify/auth';
 import { useForm, Controller } from 'react-hook-form';
-import React from 'react'
+import React, { useState } from 'react'
+import { Alert } from 'react-native';
 
 interface Props extends StackScreenProps<any,any>{};
 
 const LoginScreen = ( {navigation}:Props ) => {
 
   const { control, handleSubmit, formState: { errors } } = useForm();
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const onSubmit = (data: any) => {
-    console.log(data);
-    // Aquí puedes realizar acciones adicionales, como enviar datos al servidor, validar credenciales, etc.
-    navigation.navigate('IsDone'); // Navegar a la pantalla de éxito
+  const onSubmit = async (data: any) => {
+    if (loading) {
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const reponse = await signIn(data);
+      console.log(reponse)
+    } catch (e: any) {
+      Alert.alert('Oops', e.message)
+    }
+
+    setLoading(false);
+    navigation.navigate('IsDone');
   };
 
   return (
@@ -73,7 +88,7 @@ const LoginScreen = ( {navigation}:Props ) => {
           </Center>
         </VStack>
         <VStack>
-          <Button onPress={handleSubmit(onSubmit)}>Iniciar Sesion</Button>
+          <Button onPress={handleSubmit(onSubmit)}>{loading ? 'Cargando...' : 'Iniciar sesion'}</Button>
         </VStack>
       </VStack>
     </Flex>

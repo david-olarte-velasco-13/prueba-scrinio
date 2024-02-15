@@ -7,7 +7,7 @@ import ProfileIsDoneScreen from '../screens/ProfileIsDoneScreen';
 import RegisterScreen1 from '../screens/RegisterScreen1';
 import RegisterScreen2 from '../screens/RegisterScreen2';
 import RegisterScreen3 from '../screens/RegisterScreen3';
-import RegisterScreen4 from '../screens/RegisterScreen4';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -22,7 +22,6 @@ const StackNavigator = () => {
       <Stack.Screen name='Register1' component={ RegisterScreen1 }/>
       <Stack.Screen name='Register2' component={ RegisterScreen2 }/>
       <Stack.Screen name='Register3' component={ RegisterScreen3 }/>
-      <Stack.Screen name='Register4' component={ RegisterScreen4 }/>
     </Stack.Navigator>
   )
 }

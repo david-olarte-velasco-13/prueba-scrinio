@@ -14,7 +14,7 @@ const WelcomeScreen = ( {navigation}:Props ) => {
       </VStack>
       <VStack space={2}>
         <Button onPress={() => navigation.navigate('Login')}>Iniciar Sesion</Button>
-        <Button onPress={() => navigation.navigate('Register1')}>Registrarse</Button>
+        <Button onPress={() => navigation.navigate('Register2')}>Registrarse</Button>
       </VStack>
     </Flex>
   )

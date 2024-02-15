@@ -5,12 +5,14 @@ import React from 'react'
 interface Props extends StackScreenProps<any,any>{};
 
 const RegisterScreen3 = ( {navigation}:Props ) => {
+
+    
   return (
     <Flex safeArea flex={1} padding={2} justifyContent={'center'}>
         <VStack margin={2} borderStyle={'solid'} borderRadius={'md'} space={20} shadow={'1'} padding={2}>
             <VStack>
                 <Center>
-                    <Text>3</Text>
+                    <Text>2</Text>
                 </Center>
             </VStack>
             <VStack>
@@ -21,7 +23,7 @@ const RegisterScreen3 = ( {navigation}:Props ) => {
                 </Center>                    
             </VStack>
             <VStack>
-                <Button onPress={() => navigation.navigate('Register4')}>
+                <Button onPress={() => navigation.navigate('Register1')}>
                     Completar Perfil
                 </Button>
             </VStack>
